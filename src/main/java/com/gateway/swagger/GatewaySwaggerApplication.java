@@ -10,11 +10,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author xiaofei
  */
 @SpringBootApplication
-@EnableSwagger2
 @EnableDiscoveryClient
 public class GatewaySwaggerApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(GatewaySwaggerApplication.class,args);
     }
 

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: gateway-swagger
+    name: gateway-swagger-xiaofei
   cloud:
     nacos:
       discovery:
@@ -12,27 +12,3 @@ spring:
         server-addr: 192.168.1.59:8848
         file-extension: yml
         group: DEFAULT_GROUP
-    gateway:
-      discovery:
-        locator:
-          lower-case-service-id: true
-          enabled: true
-      routes:
-        - id: server-user-api
-          uri: http://knife4j.xiaominfo.com/
-          predicates:
-            - Path=/**
-        - id: server-auth-api
-          uri: lb://moli-auth
-          predicates:
-            - Path=/api-auth/**
-        - id: server-robot-api
-          uri: lb://moli-ms-robot
-          predicates:
-            - Path=/api-robot/**
-        - id: server-order
-          uri: lb://moli-ms-order
-          predicates:
-            - Path=/api-order/**
-      default-filters:
-        - StripPrefix=1

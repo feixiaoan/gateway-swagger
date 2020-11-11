@@ -1,0 +1,86 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: server-user-api
+          uri: lb://gateway
+          predicates:
+            - Path=/message/**
+          filters:
+            - StripPrefix=1
+        - id: server-auth-api
+          uri: lb://swagger-xiaofei
+          predicates:
+            - Path=/api-auth/**
+          filters:
+            - StripPrefix=1
+        - id: server-robot-api
+          uri: lb://swagger-xiaofei
+          predicates:
+            - Path=/api-robot/**
+          filters:
+            - StripPrefix=1
+        - id: server-order
+          uri: lb://ceshi
+          predicates:
+            - Path=/ceshi/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+#spring:
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          lower-case-service-id: true
+#          enabled: true
+#      routes:
+#        - id: server-1
+#          uri: lb://swagger
+#          predicates:
+#            - Path=/message/v2/api-docs
+#          filters:
+#            - StripPrefix=1
+#        - id: server-2
+#          uri: lb://gateway
+#          predicates:
+#            - Path=/gateway/v2/api-docs
+#          filters:
+#            - StripPrefix=1
+#spring:
+#  cloud:
+#    gateway:
+#      enabled: true
+#      discovery:
+#        locator:
+#          lower-case-service-id: true
+#          enabled: true
+#      routes:
+#        #netty 路由过滤器(数组)，http或https开头 lb://代表是服务的名称  predicates:表示会过滤掉的请求头
+#        - id: user-router
+#          uri: lb://user-api
+#          predicates:
+#            - Path=/**
+#          filters:
+#            - StripPrefix=1
+#        - id: standard-router
+#          uri: lb://standard-api
+#          predicates:
+#            - Path=/standard-api/**
+#          filters:
+#            - StripPrefix=1
+#        - id: file-upload-router
+#          uri: lb://file-service
+#          predicates:
+#            - Path=/file-service/**
+#          filters:
+#            - StripPrefix=1
+#    #处理跨域请求问题
+#    globalcors:
+#      cors-configurations:
+#        '[/**]':
+#          allowedOrigins: "*"
+#          allowedMethods: "*"

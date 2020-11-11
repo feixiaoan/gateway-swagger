@@ -20,8 +20,14 @@ import java.util.List;
 @Component
 public class GatewaySwaggerProvider implements SwaggerResourcesProvider {
 
+    /**
+     * swagger默认放入url后缀
+     */
     public static final String API_URI = "/v2/api-docs";
 
+    /**
+     * 网关理由
+     */
     private final RouteLocator routeLocator;
 
     private final GatewayProperties gatewayProperties;
@@ -40,12 +46,15 @@ public class GatewaySwaggerProvider implements SwaggerResourcesProvider {
         // 结合路由配置，只获取有效的route节点
         gatewayProperties.getRoutes().stream()
                 // id不为空，并且id以 -api 结尾的路由
-                .filter(routeDefinition -> routes.contains(routeDefinition.getId()) && StringUtils.endsWithIgnoreCase(routeDefinition.getId(), "-api"))
+//                .filter(routeDefinition -> routes.contains(routeDefinition.getId()) && StringUtils.endsWithIgnoreCase(routeDefinition.getId(), "-api"))
+
                 .forEach(routeDefinition -> routeDefinition.getPredicates().stream()
                         .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
                         .forEach(predicateDefinition -> resources.add(swaggerResource(routeDefinition.getId(),
                                 predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
                                         .replace("/**", API_URI)))));
+
+
         return resources;
     }
 
