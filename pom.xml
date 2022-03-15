@@ -12,7 +12,7 @@
 
 
     <properties>
-        <nacos-version>2.1.0.RELEASE</nacos-version>
+        <nacos-version>2.2.7.RELEASE</nacos-version>
         <swagger-fox-version>2.9.1</swagger-fox-version>
         <lombok.version>1.18.8</lombok.version>
         <spring-cloud>Hoxton.SR8</spring-cloud>
