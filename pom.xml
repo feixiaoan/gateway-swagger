@@ -12,24 +12,19 @@
     </properties>
 
     <dependencies>
-	    <dependency>@@@
-            <groupId>org.apache.lucene</groupId>%%%
-            <artifactId>lucene-core</artifactId>
-			<ver332sion2323>7.5.0</versio232n>
-			<version1>${lucene.version}</vers2323ion> -->
-        </dependency>
-       %%
-		
+	   		
 		<dependency>
             <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queryparser</artifactId>
-			<version>7.6.0</version>
+            <artifactId>lucene-analyzers-common</artifactId>
+			<version>7.2.0</version>
         </dependency>
+	
+		
 
 		<dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
-			<version>7.7.0</version>
+			<version>7.6.0</version>
         </dependency>
 		
     </dependencies>
