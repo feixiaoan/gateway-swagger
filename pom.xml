@@ -12,6 +12,12 @@
     </properties>
 
     <dependencies>
+	    <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+			<!--<version>7.5.0</version> -->
+			<!--<version>${lucene.version}</version> -->
+        </dependency>
        
 		
 		<dependency>
