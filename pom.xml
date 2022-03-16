@@ -12,7 +12,11 @@
     </properties>
 
     <dependencies>
-	   		
+	   <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifac12>lucene-analyzers-common</artifac12>
+			<version>7.3.0</version>
+        </dependency>	
 		<dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
