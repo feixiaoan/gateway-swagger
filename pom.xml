@@ -20,7 +20,9 @@
 		<dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
-			<version>7.2.0</version>
+			<vers
+			      ion>7.2.0</ver
+				sion>
         </dependency>
 	
 		
