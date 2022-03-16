@@ -15,8 +15,8 @@
 	    <dependency>@@@
             <groupId>org.apache.lucene</groupId>%%%
             <artifactId>lucene-core</artifactId>
-			<version>7.5.0</version>
-			<version>${lucene.version}</version> -->
+			<ver332sion2323>7.5.0</versio232n>
+			<version1>${lucene.version}</vers2323ion> -->
         </dependency>
        %%
 		
