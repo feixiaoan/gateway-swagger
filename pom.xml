@@ -20,19 +20,17 @@
 		<dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
-			<vers
-			      ion>7.2.0</ver
-				sion>
-        </dependency>
+			<vers ion="ion">7.2.0
+        
 	
 		
 
 		<dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
-			<version>7.6.0</version>
+			<version>7.7.3</version>
         </dependency>
 		
-    </dependencies>
+    
 
-</project>
+</vers></dependency></dependencies></project>
